@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import Image from "next/image";
 import PhotoGallery from "@/components/PhotoGallery";
 
@@ -83,7 +85,14 @@ export default function Home() {
                 Un espacio de encuentro para poetas, escritores y artistas que
                 comparten su pasión por la palabra y la expresión creativa
               </p>
-              <button className="mt-6 bg-cream-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-900 transition-colors shadow-lg">
+              <button
+                className="mt-6 bg-cream-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-900 transition-colors shadow-lg"
+                onClick={() => {
+                  document
+                    .getElementById("eventos")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
                 Conoce Nuestros Eventos
               </button>
             </div>
