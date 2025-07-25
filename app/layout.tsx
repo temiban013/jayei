@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/jayei-logo.jpg",
+        url: "/jayei-logo.jpg",
         width: 1200,
         height: 630,
         alt: "JAYEI - Junte de Artistas y Escritores Internacionales",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: "JAYEI - Junte de Artistas y Escritores Internacionales",
     description:
       "Comunidad vibrante de poetas, escritores y artistas del Caribe.",
-    images: ["/images/jayei-logo.jpg"],
+    images: ["/jayei-logo.jpg"],
     creator: "@jayei_org",
   },
   robots: {
