@@ -1,9 +1,32 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import PhotoGallery from "@/components/PhotoGallery";
 
 export default function Home() {
+  // State to manage mobile menu visibility
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Function to toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Function to close mobile menu when a nav link is clicked
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Function to handle smooth scrolling and menu closing
+  const handleNavClick = (elementId: string) => {
+    closeMobileMenu();
+    setTimeout(() => {
+      document
+        .getElementById(elementId)
+        ?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
       {/* Navigation */}
@@ -21,6 +44,8 @@ export default function Home() {
                 priority
               />
             </div>
+
+            {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
               <a
                 href="#nosotros"
@@ -47,25 +72,74 @@ export default function Home() {
                 Únete
               </a>
             </div>
+
             {/* Mobile menu button */}
             <div className="md:hidden">
-              <button className="text-gray-700 hover:text-cream-500">
+              <button
+                onClick={toggleMobileMenu}
+                className="text-gray-700 hover:text-cream-500 p-2 rounded-md transition-colors"
+                aria-label="Abrir menú de navegación"
+                aria-expanded={isMobileMenuOpen}
+              >
                 <svg
                   className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  {isMobileMenuOpen ? (
+                    // X icon when menu is open
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    // Hamburger icon when menu is closed
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
                 </svg>
               </button>
             </div>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden border-t border-gray-200 bg-white/95 backdrop-blur-sm">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                <button
+                  onClick={() => handleNavClick("nosotros")}
+                  className="block w-full text-left px-3 py-2 text-gray-700 hover:text-cream-900 hover:bg-amber-50 rounded-md font-medium transition-colors"
+                >
+                  Nosotros
+                </button>
+                <button
+                  onClick={() => handleNavClick("eventos")}
+                  className="block w-full text-left px-3 py-2 text-gray-700 hover:text-cream-900 hover:bg-amber-50 rounded-md font-medium transition-colors"
+                >
+                  Eventos
+                </button>
+                <button
+                  onClick={() => handleNavClick("galeria")}
+                  className="block w-full text-left px-3 py-2 text-gray-700 hover:text-cream-900 hover:bg-amber-50 rounded-md font-medium transition-colors"
+                >
+                  Galería
+                </button>
+                <button
+                  onClick={() => handleNavClick("unete")}
+                  className="block w-full text-left px-3 py-2 bg-cream-500 text-white hover:bg-amber-900 rounded-lg font-medium transition-colors mt-2"
+                >
+                  Únete
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -87,11 +161,7 @@ export default function Home() {
               </p>
               <button
                 className="mt-6 bg-cream-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-900 transition-colors shadow-lg"
-                onClick={() => {
-                  document
-                    .getElementById("eventos")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
+                onClick={() => handleNavClick("eventos")}
               >
                 Conoce Nuestros Eventos
               </button>
