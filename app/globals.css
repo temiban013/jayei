@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf8f5;
+  --foreground: #3a3a3a;
+  --primary-brown: #a0714f;
+  --secondary-brown: #8b5a3c;
+  --accent-gray: #5a5a5a;
+  --light-gray: #e8e4e0;
+  --cream: #f5f0e8;
 }
 
 @theme inline {
@@ -10,6 +15,30 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Additional gray shades for better design */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Cream color palette */
+  --color-cream-50: #f5f0e8; /* cream */
+  --color-cream-100: #ede2d2;
+  --color-cream-200: #e2cdb7;
+  --color-cream-300: #d3b08e;
+  --color-cream-400: #bb9167;
+  --color-cream-500: #a0714f; /* primary-brown */
+  --color-cream-600: #946547;
+  --color-cream-700: #8b5a3c; /* secondary-brown */
+  --color-cream-800: #7a4d32;
+  --color-cream-900: #68412a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +51,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Smooth scrolling for navigation links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom backdrop blur for browsers that need it */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
