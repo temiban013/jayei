@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PhotoGallery from "@/components/PhotoGallery";
 
 export default function Home() {
   return (
@@ -207,12 +208,12 @@ export default function Home() {
                 Velada Poética Mensual
               </h3>
               <span className="bg-amber-100 text-cream-700 px-4 py-2 rounded-full font-semibold">
-                Primer viernes de cada mes
+                Último martes de cada mes
               </span>
             </div>
 
             <p className="text-gray-700 text-lg mb-6">
-              Cada primer viernes del mes nos reunimos para compartir nuestras
+              Cada último martes del mes nos reunimos para compartir nuestras
               creaciones en un ambiente íntimo y acogedor
             </p>
 
@@ -259,6 +260,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Photo Gallery - Now using the component */}
+      <PhotoGallery totalImages={21} />
 
       {/* Call to Action */}
       <section id="unete" className="py-24 bg-white">
