@@ -13,7 +13,7 @@ export default function Home() {
             <div className="flex items-center space-x-3">
               {/* Logo */}
               <Image
-                src="/jayeilogo.jpg"
+                src="/jayei-logo.jpg"
                 alt="JAYEI Logo"
                 width={120}
                 height={120}
@@ -302,7 +302,7 @@ export default function Home() {
             <div className="flex items-center justify-center space-x-3 pb-6">
               {/* Logo */}
               <Image
-                src="/jayeilogo.jpg"
+                src="/jayei-logo.jpg"
                 alt="JAYEI Logo"
                 width={250}
                 height={250}

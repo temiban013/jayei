@@ -13,9 +13,81 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JAYEI - Junta de Artistas y Escritores Internacionales",
+  title: {
+    default: "JAYEI - Junte de Artistas y Escritores Internacionales",
+    template: "%s | JAYEI",
+  },
   description:
-    "Un espacio de encuentro para poetas, escritores y artistas que comparten su pasión por la palabra y la expresión creativa",
+    "Comunidad vibrante de poetas, escritores y artistas del Caribe. Únete a nosotros en Puerto Rico y República Dominicana.",
+  metadataBase: new URL("https://jayei.org"),
+  keywords: [
+    "poesía",
+    "escritores",
+    "artistas",
+    "Puerto Rico",
+    "República Dominicana",
+    "literatura",
+    "arte",
+    "Caribe",
+    "comunidad literaria",
+    "escritores caribeños",
+    "poetas latinos",
+    "cultura latina",
+  ],
+  authors: [{ name: "JAYEI", url: "https://jayei.org" }],
+  creator: "JAYEI",
+  publisher: "JAYEI",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "JAYEI - Junte de Artistas y Escritores Internacionales",
+    description:
+      "Comunidad vibrante de poetas, escritores y artistas del Caribe.",
+    url: "https://jayei.org",
+    siteName: "JAYEI",
+    locale: "es_ES",
+    type: "website",
+    images: [
+      {
+        url: "/images/jayei-logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "JAYEI - Junte de Artistas y Escritores Internacionales",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JAYEI - Junte de Artistas y Escritores Internacionales",
+    description:
+      "Comunidad vibrante de poetas, escritores y artistas del Caribe.",
+    images: ["/images/jayei-logo.jpg"],
+    creator: "@jayei_org",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+    // Add other search engine verifications as needed
+  },
+  category: "arts and literature",
 };
 
 export default function RootLayout({
