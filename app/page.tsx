@@ -7,6 +7,9 @@ export default function Home() {
   // State to manage mobile menu visibility
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // State to manage "Conoce Más" modal
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
+
   // Function to toggle mobile menu
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -27,6 +30,31 @@ export default function Home() {
     }, 100);
   };
 
+  // Function to handle contact button click
+  const handleContactClick = () => {
+    const email = "junteartistasyescritoresint@gmail.com";
+    const subject = encodeURIComponent("Interés en unirse a JAYEI");
+    const body = encodeURIComponent(
+      "Hola,\n\nEstoy interesado/a en conocer más sobre JAYEI y posiblemente unirme a su comunidad de artistas y escritores.\n\nEspero su respuesta.\n\nSaludos cordiales"
+    );
+
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  };
+
+  // Function to handle "Conoce Más" button click
+  const handleInfoClick = () => {
+    setIsInfoModalOpen(true);
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = "hidden";
+  };
+
+  // Function to close info modal
+  const closeInfoModal = () => {
+    setIsInfoModalOpen(false);
+    // Restore body scrolling
+    document.body.style.overflow = "unset";
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
       {/* Navigation */}
@@ -40,7 +68,7 @@ export default function Home() {
                 alt="JAYEI Logo"
                 width={120}
                 height={120}
-                className="rounded-lg"
+                className="rounded-xl"
                 priority
               />
             </div>
@@ -355,15 +383,219 @@ export default function Home() {
             aquí encontrarás un espacio para crecer y compartir.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-cream-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-900 transition-colors shadow-lg">
+            <button
+              onClick={handleContactClick}
+              className="bg-cream-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-900 transition-colors shadow-lg"
+            >
               Contáctanos
             </button>
-            <button className="border-2 border-cream-500 text-cream-500 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-50 transition-colors">
+            <button
+              onClick={handleInfoClick}
+              className="border-2 border-cream-500 text-cream-500 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-50 transition-colors"
+            >
               Conoce Más
             </button>
           </div>
         </div>
       </section>
+
+      {/* Info Modal */}
+      {isInfoModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+          onClick={closeInfoModal}
+        >
+          <div
+            className="bg-white rounded-xl max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <h3 className="text-2xl font-bold text-gray-800">
+                Conoce Más Sobre JAYEI
+              </h3>
+              <button
+                onClick={closeInfoModal}
+                className="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-colors"
+                aria-label="Cerrar modal"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 space-y-6">
+              {/* Historia */}
+              <div>
+                <h4 className="text-xl font-semibold text-cream-700 mb-3">
+                  Nuestra Historia
+                </h4>
+                <p className="text-gray-600 leading-relaxed">
+                  JAYEI nació de la pasión compartida por el arte y la
+                  literatura en el Caribe. Fundado por un grupo de escritores y
+                  artistas comprometidos con la preservación y promoción de la
+                  cultura literaria en Puerto Rico y República Dominicana, hemos
+                  crecido hasta convertirnos en una comunidad vibrante que
+                  trasciende fronteras.
+                </p>
+              </div>
+
+              {/* Valores */}
+              <div>
+                <h4 className="text-xl font-semibold text-cream-700 mb-3">
+                  Nuestros Valores
+                </h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="p-4 bg-amber-50 rounded-lg">
+                    <h5 className="font-semibold text-gray-800 mb-2">
+                      Inclusión
+                    </h5>
+                    <p className="text-sm text-gray-600">
+                      Acogemos a artistas de todas las edades y niveles de
+                      experiencia
+                    </p>
+                  </div>
+                  <div className="p-4 bg-amber-50 rounded-lg">
+                    <h5 className="font-semibold text-gray-800 mb-2">
+                      Creatividad
+                    </h5>
+                    <p className="text-sm text-gray-600">
+                      Fomentamos la expresión artística libre y auténtica
+                    </p>
+                  </div>
+                  <div className="p-4 bg-amber-50 rounded-lg">
+                    <h5 className="font-semibold text-gray-800 mb-2">
+                      Comunidad
+                    </h5>
+                    <p className="text-sm text-gray-600">
+                      Creamos vínculos duraderos entre artistas y escritores
+                    </p>
+                  </div>
+                  <div className="p-4 bg-amber-50 rounded-lg">
+                    <h5 className="font-semibold text-gray-800 mb-2">
+                      Cultura
+                    </h5>
+                    <p className="text-sm text-gray-600">
+                      Preservamos y promovemos la riqueza cultural del Caribe
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Actividades */}
+              <div>
+                <h4 className="text-xl font-semibold text-cream-700 mb-3">
+                  Nuestras Actividades
+                </h4>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-cream-500 rounded-full mt-2"></div>
+                    <div>
+                      <h5 className="font-medium text-gray-800">
+                        Veladas Poéticas Mensuales
+                      </h5>
+                      <p className="text-sm text-gray-600">
+                        Encuentros íntimos donde compartimos nuestras creaciones
+                        literarias
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-cream-500 rounded-full mt-2"></div>
+                    <div>
+                      <h5 className="font-medium text-gray-800">
+                        Talleres de Escritura
+                      </h5>
+                      <p className="text-sm text-gray-600">
+                        Sesiones educativas para mejorar técnicas literarias y
+                        artísticas
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-cream-500 rounded-full mt-2"></div>
+                    <div>
+                      <h5 className="font-medium text-gray-800">
+                        Intercambios Culturales
+                      </h5>
+                      <p className="text-sm text-gray-600">
+                        Colaboraciones entre artistas de Puerto Rico y República
+                        Dominicana
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-cream-500 rounded-full mt-2"></div>
+                    <div>
+                      <h5 className="font-medium text-gray-800">
+                        Publicaciones Digitales
+                      </h5>
+                      <p className="text-sm text-gray-600">
+                        Plataforma para que cada miembro publique y comercialice
+                        sus obras
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Cómo unirse */}
+              <div>
+                <h4 className="text-xl font-semibold text-cream-700 mb-3">
+                  ¿Cómo Unirse?
+                </h4>
+                <div className="bg-cream-50 rounded-lg p-4">
+                  <p className="text-gray-700 mb-4">
+                    Unirse a JAYEI es simple y gratuito. Solo necesitas:
+                  </p>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="flex items-center space-x-2">
+                      <span className="w-1.5 h-1.5 bg-cream-500 rounded-full"></span>
+                      <span>Pasión por la literatura, poesía o arte</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <span className="w-1.5 h-1.5 bg-cream-500 rounded-full"></span>
+                      <span>
+                        Deseo de compartir y aprender con otros artistas
+                      </span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <span className="w-1.5 h-1.5 bg-cream-500 rounded-full"></span>
+                      <span>Compromiso con el respeto y la inclusión</span>
+                    </li>
+                  </ul>
+                  <div className="mt-4 pt-4 border-t border-cream-200">
+                    <p className="text-sm text-gray-600 mb-3">
+                      Para más información, contáctanos directamente:
+                    </p>
+                    <button
+                      onClick={() => {
+                        closeInfoModal();
+                        handleContactClick();
+                      }}
+                      className="bg-cream-500 text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-amber-900 transition-colors"
+                    >
+                      Escribir Email
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12">
@@ -376,7 +608,7 @@ export default function Home() {
                 alt="JAYEI Logo"
                 width={250}
                 height={250}
-                className="rounded-lg"
+                className="rounded-xl"
                 priority
               />
             </div>
