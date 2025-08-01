@@ -287,12 +287,12 @@ export default function Home() {
                 Velada Poética Mensual
               </h3>
               <span className="bg-amber-100 text-cream-700 px-4 py-2 rounded-full font-semibold">
-                Último martes de cada mes
+                Segundo martes de cada mes
               </span>
             </div>
 
             <p className="text-gray-700 text-lg mb-6">
-              Cada último martes del mes nos reunimos para compartir nuestras
+              Cada segundo martes del mes nos reunimos para compartir nuestras
               creaciones en un ambiente íntimo y acogedor
             </p>
 
