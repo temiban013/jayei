@@ -317,7 +317,7 @@ export default function Home() {
                   1ra Velada Poética en Desigual
                 </h3>
                 <p className="text-lg text-gray-600 italic">
-                  "Disfrutemos la poesía con momentos Desiguales"
+                  Disfrutemos la poesía con momentos Desiguales
                 </p>
               </div>
               <span className="bg-amber-100 text-cream-700 px-4 py-2 rounded-full font-semibold">
@@ -444,7 +444,7 @@ export default function Home() {
 
             <div className="bg-amber-50 rounded-lg p-4 mb-6">
               <p className="text-cream-700 font-medium text-center">
-                "En Desigual gastro-bar se promueve la igualdad"
+                En Desigual gastro-bar se promueve la igualdad
               </p>
             </div>
 
