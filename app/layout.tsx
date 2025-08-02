@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jayei.org"),
   keywords: [
     "poesía",
+    "velada poética",
+    "poesía Puerto Rico",
+    "Humacao eventos",
+    "Desigual gastro-bar",
+    "JAYEI",
+    "agosto 2025",
     "escritores",
     "artistas",
     "Puerto Rico",
