@@ -304,25 +304,20 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Próximos Encuentros
+              Nuestros Encuentros
             </h2>
             <div className="w-24 h-1 bg-white mx-auto"></div>
           </div>
 
-          {/* Featured Event - Velada Poética en Desigual */}
+          {/* Regular Monthly Events */}
           <div className="bg-white rounded-xl p-8 shadow-2xl max-w-5xl mx-auto mb-8">
-            <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
-              <div>
-                <h3 className="text-2xl font-bold text-cream-700 mb-2">
-                  1ra Velada Poética en Desigual
-                </h3>
-                <p className="text-lg text-gray-600 italic">
-                  Disfrutemos la poesía con momentos Desiguales
-                </p>
-              </div>
-              <span className="bg-amber-100 text-cream-700 px-4 py-2 rounded-full font-semibold">
-                Evento Especial
-              </span>
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-cream-700 mb-2">
+                Encuentros Mensuales de JAYEI
+              </h3>
+              <p className="text-lg text-gray-600 italic">
+                Donde el arte y la literatura cobran vida
+              </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
@@ -342,8 +337,9 @@ export default function Home() {
                 </svg>
                 <div>
                   <p className="text-gray-700 font-medium">
-                    Martes 12 de Agosto, 2025
+                    Segundo martes de cada mes
                   </p>
+                  <p className="text-gray-500 text-sm">Reuniones regulares</p>
                 </div>
               </div>
 
@@ -363,6 +359,7 @@ export default function Home() {
                 </svg>
                 <div>
                   <p className="text-gray-700 font-medium">7:00 PM</p>
+                  <p className="text-gray-500 text-sm">Hora de inicio</p>
                 </div>
               </div>
 
@@ -393,7 +390,7 @@ export default function Home() {
                   <p className="text-gray-500 text-sm">
                     118 Calle Cruz Ortiz Stella
                   </p>
-                  <p className="text-gray-500 text-sm">Humacao, PR 00791</p>
+                  <p className="text-gray-500 text-sm">Humacao, PR</p>
                 </div>
               </div>
 
@@ -413,6 +410,9 @@ export default function Home() {
                 </svg>
                 <div>
                   <p className="text-gray-700 font-medium">(787) 719-5399</p>
+                  <p className="text-gray-500 text-sm">
+                    Información y contacto
+                  </p>
                 </div>
               </div>
 
@@ -431,7 +431,7 @@ export default function Home() {
                   />
                 </svg>
                 <div>
-                  <p className="text-gray-700 font-medium">Anfitriones:</p>
+                  <p className="text-gray-700 font-medium">Coordinadores:</p>
                   <p className="text-gray-600 text-sm">
                     Eneida Rodríguez-Delgado
                   </p>
@@ -440,17 +440,93 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+
+              <div className="flex items-center space-x-3">
+                <svg
+                  className="w-6 h-6 text-cream-500 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                <div>
+                  <p className="text-gray-700 font-medium text-sm">
+                    junteartistasyescritoresint@gmail.com
+                  </p>
+                  <p className="text-gray-500 text-sm">Email de contacto</p>
+                </div>
+              </div>
             </div>
 
             <div className="bg-amber-50 rounded-lg p-4 mb-6">
               <p className="text-cream-700 font-medium text-center">
-                En Desigual gastro-bar se promueve la igualdad
+                &ldquo;Un espacio donde la palabra encuentra su hogar y los
+                corazones se conectan a través del arte&rdquo;
               </p>
             </div>
 
+            <div className="space-y-4 mb-6">
+              <div className="text-center">
+                <h4 className="text-lg font-semibold text-cream-700 mb-2">
+                  ¿Qué puedes esperar en nuestros encuentros?
+                </h4>
+                <div className="grid md:grid-cols-2 gap-4 text-left">
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <span className="w-2 h-2 bg-cream-500 rounded-full"></span>
+                      <span className="text-gray-600">
+                        Lecturas de poesía original
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="w-2 h-2 bg-cream-500 rounded-full"></span>
+                      <span className="text-gray-600">
+                        Intercambio de obras literarias
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="w-2 h-2 bg-cream-500 rounded-full"></span>
+                      <span className="text-gray-600">
+                        Talleres de escritura creativa
+                      </span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <span className="w-2 h-2 bg-cream-500 rounded-full"></span>
+                      <span className="text-gray-600">
+                        Networking entre artistas
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="w-2 h-2 bg-cream-500 rounded-full"></span>
+                      <span className="text-gray-600">
+                        Presentaciones de libros
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="w-2 h-2 bg-cream-500 rounded-full"></span>
+                      <span className="text-gray-600">
+                        Ambiente acogedor y familiar
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-cream-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-900 transition-colors shadow-lg">
-                Confirmar Asistencia
+              <button
+                onClick={handleContactClick}
+                className="bg-cream-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-900 transition-colors shadow-lg"
+              >
+                Más Información
               </button>
               <a
                 href="tel:7877195399"
@@ -461,15 +537,17 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Regular Monthly Events */}
+          {/* Additional Info Card */}
           <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-4xl mx-auto">
             <div className="text-center">
               <h3 className="text-xl font-bold text-cream-700 mb-3">
-                Encuentros Regulares
+                Eventos Especiales
               </h3>
               <p className="text-gray-600">
-                Normalmente nos reunimos el segundo martes de cada mes en Casa
-                de la Cultura. ¡Mantente atento a nuestros próximos anuncios!
+                Además de nuestros encuentros regulares, organizamos veladas
+                poéticas especiales en diferentes venues. ¡Síguenos en nuestras
+                redes sociales para estar al día con próximos eventos y
+                colaboraciones especiales!
               </p>
             </div>
           </div>
